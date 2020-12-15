@@ -2,11 +2,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.json</groupId>
-    <artifactId>json</artifactId>
+    <artifactId>jsonc</artifactId>
     <version>v20200429-SNAPSHOT</version>
     <packaging>bundle</packaging>
 
-    <name>JSON in Java</name>
+    <name>JSONC in Java</name>
     <description>
         JSON is a light-weight, language independent, data interchange format.
         See http://www.JSON.org/
@@ -18,6 +18,8 @@
         This is a reference implementation. There is a large number of JSON packages
         in Java. Perhaps someday the Java community will standardize on one. Until
         then, choose carefully.
+
+        This version is modified to allow comments.
 
         The license includes this restriction: "The software shall be used for good,
         not evil." If your conscience cannot live with that, then choose a different
@@ -31,10 +33,22 @@
         <version>9</version>
     </parent>
 
+
+    <distributionManagement>
+        <repository>
+            <id>stirante-nexus-releases</id>
+            <url>https://nexus.stirante.com/repository/maven-releases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>stirante-nexus-snapshots</id>
+            <url>https://nexus.stirante.com/repository/maven-snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
+
     <scm>
-        <url>https://github.com/douglascrockford/JSON-java.git</url>
-        <connection>scm:git:git://github.com/douglascrockford/JSON-java.git</connection>
-        <developerConnection>scm:git:git@github.com:douglascrockford/JSON-java.git</developerConnection>
+        <connection>scm:git:git@github.com:stirante/JSONC-java.git</connection>
+        <url>scm:git:git@github.com:stirante/JSONC-java.git</url>
+        <developerConnection>scm:git:git@github.com:stirante/JSONC-java.git</developerConnection>
     </scm>
 
     <licenses>
@@ -68,6 +82,10 @@
         <developer>
             <name>Douglas Crockford</name>
             <email>douglas@crockford.com</email>
+        </developer>
+        <developer>
+            <name>Piotr Brzozowski</name>
+            <email>brzozowski.s.piotr@gmail.com</email>
         </developer>
     </developers>
 

@@ -290,8 +290,60 @@ public class JSONTokener {
     public char nextClean() throws JSONException {
         for (;;) {
             char c = this.next();
+            if (c == '/') {
+                c = next();
+                if (c == '/') {
+                    nextToEndOfLine();
+                    back();
+                    continue;
+                }
+                if (c == '*') {
+                    nextToEndOfCommentBlock();
+                    back();
+                    continue;
+                }
+            }
             if (c == 0 || c > ' ') {
                 return c;
+            }
+        }
+    }
+
+
+    /**
+     * Scan to the next end of line char.
+     * @throws JSONException Thrown if there is an error reading the source string.
+     */
+    public void nextToEndOfLine() throws JSONException {
+        for (;;) {
+            char c = next();
+
+            if (c == 0 || c == '\r' || c == '\n') {
+                next();
+                return;
+            }
+        }
+    }
+
+
+    /**
+     * Get the next char in the string, skipping comments.
+     * @throws JSONException Thrown if there is an error reading the source string.
+     */
+    public void nextToEndOfCommentBlock() throws JSONException {
+        for (;;) {
+            char c = next();
+
+            if (c == 0) {
+                return;
+            }
+
+            if (c == '*') {
+                c = next();
+                if (c == '/') {
+                    next();
+                    return;
+                }
             }
         }
     }

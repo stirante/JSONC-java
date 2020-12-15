@@ -1,9 +1,35 @@
-JSON in Java [package org.json]
+JSONC in Java [package org.json]
 ===============================
 
-[![Maven Central](https://img.shields.io/maven-central/v/org.json/json.svg)](https://mvnrepository.com/artifact/org.json/json)
+# Fork
 
-**[Click here if you just want the latest release jar file.](https://repo1.maven.org/maven2/org/json/json/20201115/json-20201115.jar)**
+This fork allows for using comments inside JSON.
+
+# Usage
+
+
+Add a repository to pom.xml:
+
+```xml
+<repositories>
+    <repository>
+        <id>stirante-nexus-snapshots</id>
+        <url>https://nexus.stirante.com/repository/maven-snapshots/</url>
+    </repository>
+</repositories>
+```
+
+Add dependency to pom.xml:
+
+```xml
+<dependencies>
+    <dependency>
+        <groupId>org.json</groupId>
+        <artifactId>jsonc</artifactId>
+        <version>v20200429-SNAPSHOT</version>
+    </dependency>
+</dependencies>
+```
 
 # Overview
 

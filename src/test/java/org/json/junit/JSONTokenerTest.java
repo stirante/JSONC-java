@@ -119,6 +119,8 @@ public class JSONTokenerTest {
         checkValid("[1,2]",JSONArray.class);
         checkValid("\n\n[1,2]\n\n",JSONArray.class);
         checkValid("1 2", String.class);
+        checkValid(" {\"a\":1/*test comment*/}",JSONObject.class);
+        checkValid(" {\"a\":1//test comment\n}",JSONObject.class);
     }
     
     @Test
